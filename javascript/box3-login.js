@@ -10,4 +10,11 @@ if (islogin){
         avatar_hash: document.querySelectorAll(".web-img")[0].src.substr(35, 46);,//头像hash
     };
     console.log(userdata);
+} else {
+    document.querySelector("body").innerHTML += `<form action="" class="login">
+        <p>Login</p>
+        <input id="name" type="text" placeholder="用户名">
+        <input id="password" type="password" placeholder="密码">
+        <input id="login" type="submit" class="btn" value="登  录">
+    </form>`;
 };
