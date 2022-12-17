@@ -7,7 +7,7 @@ if (islogin){
         concern: Number(document.querySelectorAll(".text")[2].textContent.slice(3)),//关注人数
         fans: Number(document.querySelectorAll(".text")[3].textContent.slice(3)),//粉丝人数
         avatar_url: document.querySelectorAll(".web-img")[0].src,//头像链接
-        avatar_hash: document.querySelectorAll(".web-img")[0].src.substr(35, 46);,//头像hash
+        avatar_hash: document.querySelectorAll(".web-img")[0].src.substr(35, 46),//头像hash
     };
     console.log(userdata);
 } else {
