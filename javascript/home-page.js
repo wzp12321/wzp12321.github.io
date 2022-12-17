@@ -4,15 +4,15 @@ VanillaTilt.init(document.querySelector(".your-element"), {
     glare:true,
     "max-glare":1,
 });
-var mini = false;
+var next = true;
 function toggleSidebar() {
-    if (mini) {
+    if (next) {
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
-        mini = false;
+        next = false;
     } else {
         document.getElementById("mySidebar").style.width = "85px";
         document.getElementById("main").style.marginLeft = "85px";
-        mini = true;
+        next = true;
     };
 };
