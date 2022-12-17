@@ -4,7 +4,7 @@ VanillaTilt.init(document.querySelector(".your-element"), {
     glare:true,
     "max-glare":1,
 });
-var mini = true;
+var mini = false;
 function toggleSidebar() {
     if (mini) {
         document.getElementById("mySidebar").style.width = "250px";
