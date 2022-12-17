@@ -4,17 +4,15 @@ VanillaTilt.init(document.querySelector(".your-element"), {
     glare:true,
     "max-glare":1,
 });
-var mini = false;
+var mini = true;
 function toggleSidebar() {
-     if (mini) {
-    	console.log("opening sidebar");
-    	document.getElementById("mySidebar").style.width = "250px";
-    	document.getElementById("main").style.marginLeft = "250px";
-    	this.mini = false;
-      } else {
-    	console.log("closing sidebar");
-    	document.getElementById("mySidebar").style.width = "85px";
-    	document.getElementById("main").style.marginLeft = "85px";
-    	this.mini = true;
-      }
-}
+    if (mini) {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        mini = false;
+    } else {
+        document.getElementById("mySidebar").style.width = "85px";
+        document.getElementById("main").style.marginLeft = "85px";
+        mini = true;
+    };
+};
