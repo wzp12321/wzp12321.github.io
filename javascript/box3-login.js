@@ -5,7 +5,7 @@ if(new Date().getHours()>=12&&new Date().getHours()<18){
 　　wall = "3";
 };
 document.querySelector("head").innerHTML += `<style>body{
-    background: url(/img/wallpaper${wall}) no-repeat;
+    background: url(/img/wallpaper${wall}.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }</style>`;
