@@ -1,6 +1,11 @@
-var wall = ["1", "2", "3"]
+var wall = "1";
+if(new Date().getHours()>=12&&new Date().getHours()<18){
+　　wall = "2";
+}else{
+　　wall = "3";
+};
 document.querySelector("head").innerHTML += `<style>body{
-    background: url(/img/wallpaper${wall[Math.floor(Math.random()*wall.length)]}.jpg) no-repeat;
+    background: url(/img/wallpaper${wall}) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }</style>`;
