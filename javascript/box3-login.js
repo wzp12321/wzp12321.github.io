@@ -1,6 +1,6 @@
 var wall = ["1", "2", "3"]
 document.querySelector("head").innerHTML += `<style>body{
-    background: url(/img/wallpaper${wall[Math.floor(Math.random()*wall.length)];}.jpg) no-repeat;
+    background: url(/img/wallpaper${wall[Math.floor(Math.random()*wall.length)]}.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }</style>`;
