@@ -1,3 +1,9 @@
+var wall = ["1", "2", "3"]
+document.querySelector("head").innerHTML += `<style>body{
+    background: url(/img/wallpaper${wall[Math.floor(Math.random()*wall.length)];}.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}</style>`;
 var test = $("#box3").contents().find(".text"); 
 alert(test.html());
 var islogin = document.querySelector("._3AspHqpBNnv2Z9vUyC6Fnx","._12b-ZtA2Hl4-wYcKqK83AR","._1SS6wc-FMtveQU1rUrkRW","._1CxJtBjdQtSJMiKtkt_Dvl", "._2eyZue_TPS-k5Q8e4IXi4H").className.includes("color-font-black");
