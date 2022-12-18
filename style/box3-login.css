@@ -3,12 +3,6 @@
     /* 无法选中，整体感更强 */
 }
 
-body{
-    background: url(/img/wallpaper1.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 .login{
     position: absolute;
     top: 50%;
