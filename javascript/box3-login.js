@@ -1,7 +1,9 @@
 var wall = "1";
 if(new Date().getHours()>=12&&new Date().getHours()<18){
 　　wall = "2";
-}else{
+}else if(new Date().getHours()>=18&&new Date().getHours()<24){
+　　wall = "3";
+}else if(new Date().getHours()>=0&&new Date().getHours()<5){
 　　wall = "3";
 };
 document.querySelector("head").innerHTML += `<style>body{
@@ -11,8 +13,7 @@ document.querySelector("head").innerHTML += `<style>body{
 }</style>`;
 
 (function () {
-    var loginbox = document.getElementById("loginBox");
-    const five_day=1000*60*60*5;
+    const five_day=1000*60*60*24*5;
     const LOGIN_TYPES=["box","codemao"];
     var LOGINTYPE=LOGIN_TYPES[0];
     const LOGIN_TYPE_LIST={
