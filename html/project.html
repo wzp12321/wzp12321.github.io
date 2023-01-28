@@ -81,14 +81,17 @@
                         </a>
                     </li>
                 </ul>
-                <div class="wrap">
-                    <div class="search">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                        <button type="submit" class="searchButton">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <div class="input-holder">
+			    	        <input type="text" class="search-input" placeholder="Type to search" />
+			    	        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+			            </div>
+			            <span class="close" onclick="searchToggle(this, event);"></span>
+			            <div class="result-container">
+			            </div>
+                    </li>
+                </ul>
                 <ul class="user-info-menu right-links list-inline list-unstyled">
                     <li class="hidden-sm hidden-xs">
                         <a href="https://github.com/wzp12321" target="_blank">
