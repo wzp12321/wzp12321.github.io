@@ -1,0 +1,86 @@
+import opt
+import math
+
+def tank1_update():
+    return A()
+def tank2_update():
+    return A()
+def tank3_update():
+    return A()
+def tank4_update():
+    return A2()
+def tank5_update():
+    return D()
+
+def A():
+    if opt.BALL.x >= 46.5:
+        vs, hs = move(46.5, opt.BALL.y)
+    elif opt.BALL.x <= -46.5:
+        vs, hs = move(-46.5, opt.BALL.y)
+    elif 7 > opt.BALL.y > -7:
+        vs, hs = move(opt.BALL.x, opt.BALL.y)
+    else:
+        vs, hs = move(opt.BALL.x, opt.BALL.y)
+    if opt.BALL.x > 0 and opt.BALL.y < -10 and opt.BALL.vx > 0:
+        fire('careful')
+    elif opt.BALL.x > 0 and opt.BALL.y > 10 and opt.BALL.vx > 0:
+        fire('careful')
+    else:
+        fire()
+    return vs, hs
+
+def A2():
+    if opt.BALL.x > 45 and 8 > opt.BALL.y > -8:
+        fire()
+        vs, hs = move(opt.BALL.x, opt.BALL.y)
+    elif opt.BALL.y >= 8:
+        if opt.TANK.is_point_in_range(45, 7, .5):
+            vs, hs = 0, 0
+        else:
+            vs, hs = move(45, 7)
+    elif opt.BALL.y <= -8:
+        if opt.TANK.is_point_in_range(45, -7, .5):
+            vs, hs = 0, 0
+        else:
+            vs, hs = move(45, -7)
+    else:
+        vs, hs = move(45, opt.BALL.y)
+    return vs, hs
+
+def D():
+    if opt.BALL.x <= -35 and (270 < opt.TANK.angle < 360 or 0 < opt.TANK.angle < 90):
+        vs, hs = move(opt.BALL.x, opt.BALL.y)
+    elif opt.TANK.distance_to(opt.BALL.x, opt.BALL.y) < 15 and opt.BALL.x <= -30:
+        vs, hs = move(opt.BALL.x, opt.BALL.y)
+    elif opt.BALL.y >= 8:
+        vs, hs = move(-48, 8)
+    elif opt.BALL.y <= -8:
+        vs, hs = move(-48, -8)
+    else:
+        vs, hs = move(-48, opt.BALL.y)
+    return vs, hs
+
+def fire(mode = 'usual'):
+    if mode == 'usual':
+        angle = opt.TANK.angle_to(opt.BALL.x, opt.BALL.y)
+        if (0 <= angle < 2 or 358 < angle < 360) and opt.TANK.distance_to(opt.BALL.x, opt.BALL.y) <= 15 and (270 < opt.TANK.angle < 360 or 0 < opt.TANK.angle < 90):
+            return opt.TANK.do_fire()
+    elif mode == 'careful':
+        angle = opt.TANK.angle_to(opt.BALL.x, opt.BALL.y)
+        if (0 <= angle < 1 or 359 < angle < 360) and opt.TANK.distance_to(opt.BALL.x, opt.BALL.y) <= 10 and (270+45/2 < opt.TANK.angle < 360-45/2 or 45/2 < opt.TANK.angle < 90-45/2):
+            return opt.TANK.do_fire()
+    else:
+        return fire()
+
+def move(x, y):
+    radian = opt.TANK.radian_to(x, y)
+    vs = math.cos(radian)
+    hs = -1 * math.sin(radian)
+    return vs, hs
+
+def best(var):
+    if var < 0:
+        var = -1
+    else:
+        var = 1
+    return var
